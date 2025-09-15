@@ -1,24 +1,18 @@
-import google.generativeai as genai
+from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
-api_key = os.getenv("API_KEY")
+api_key = os.getenv("GOOGLE_API_KEY")
+
 
 numero_dias = 5
 numero_criancas = 2
-atividade = "música"
+atividade = "praia"
 
-prompt = f"Crie um roteiro de viagem de {numero_dias} dias, para uma familia com {numero_criancas} crianças, que gosta de {atividade}"
+prompt = f"Crie um roteiro de viagens, para um período de {numero_dias} dias, para uma família com {numero_criancas} crianças, com foco em atividades de {atividade}."
 
-# 1. Configure a API do Gemini
-genai.configure(api_key=os.environ.get("API_KEY"))
+modelo = ChatGoogleGenerativeAI(model="gemini-2.5-flash",temperature=0)
 
-# 2. Crie a instância do modelo
-cliente = genai.GenerativeModel('gemini-2.5-flash')
-
-# 3. Use o método generate_content() para obter a resposta
-response = cliente.generate_content(prompt)
-
-# 4. Imprima o texto da resposta
-print(response.text)
+resposta = modelo.invoke(prompt)
+print(resposta.content)
