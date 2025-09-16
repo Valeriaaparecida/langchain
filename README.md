@@ -13,7 +13,7 @@ O objetivo é explorar como **agentes autônomos** podem ser criados, orquestrad
 
 ## ⚙️ Guia de Configuração
 
-Siga os passos abaixo para configurar seu ambiente e utilizar os scripts do projeto.
+O script abaixo é para usar com chave da OpenAI e serve de base para os primeiros passos apesar de que esse projeto foir feito com llm do Gemini
 
 ### 1. Criar e Ativar Ambiente Virtual
 
@@ -50,4 +50,5 @@ response = cliente.generate_content(prompt)
 
 # 4. Exiba a saída
 print(response.text)
+
 
