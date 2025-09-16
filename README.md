@@ -13,7 +13,7 @@ O objetivo é explorar como **agentes autônomos** podem ser criados, orquestrad
 
 ## ⚙️ Guia de Configuração
 
-O script abaixo é para usar com chave da OpenAI e serve de base para os primeiros passos apesar de que esse projeto foir feito com llm do Gemini
+Siga os passos abaixo para configurar seu ambiente e utilizar os scripts do projeto.
 
 ### 1. Criar e Ativar Ambiente Virtual
 
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 Crie ou edite o arquivo `.env` adicionando sua chave de API da OpenAI:
 ```bash
-OPENAI_API_KEY="SUA_CHAVE_DE_API"
+GEMINI_API_KEY="SUA_CHAVE_DE_API"
 ```o  
 
 
@@ -50,5 +50,6 @@ response = cliente.generate_content(prompt)
 
 # 4. Exiba a saída
 print(response.text)
+
 
 
