@@ -11,36 +11,43 @@ O objetivo é explorar como **agentes autônomos** podem ser criados, orquestrad
 - [LangGraph](https://www.langchain.com/langgraph) → orquestração de fluxos multiagentes de forma gráfica e estruturada  
 - [Python Dotenv](https://pypi.org/project/python-dotenv/) → gerenciamento seguro de variáveis de ambiente  
 
-## 📂 Estrutura do Repositório  
-- **/notebooks** → experimentos e estudos práticos com Gemini e agentes  
-- **/src** → implementação dos agentes e fluxos multiagentes  
-- **/docs** → anotações e referências teóricas do aprendizado  
+## ⚙️ Guia de Configuração
 
-## 🚀 Exemplo de Uso com Gemini  
+Siga os passos abaixo para configurar seu ambiente e utilizar os scripts do projeto.
 
-```python
-import google.generativeai as genai
-from dotenv import load_dotenv
-import os
+### 1. Criar e Ativar Ambiente Virtual
 
-# Carregar variáveis de ambiente
-load_dotenv()
-api_key = os.getenv("API_KEY")
+**Windows:**
+```bash
+python -m venv langchain
+langchain\Scripts\activate
+```
 
-numero_dias = 5
-numero_criancas = 2
-atividade = "música"
+**Mac/Linux:**
+```bash
+python3 -m venv langchain
+source langchain/bin/activate
+```
 
-prompt = f"Crie um roteiro de viagem de {numero_dias} dias, para uma família com {numero_criancas} crianças, que gosta de {atividade}"
+### 2. Instalar Dependências
 
-# 1. Configure a API do Gemini
-genai.configure(api_key=os.environ.get("API_KEY"))
+Utilize o comando abaixo para instalar as bibliotecas necessárias:
+```bash
+pip install -r requirements.txt
+```
 
-# 2. Crie a instância do modelo
-cliente = genai.GenerativeModel('gemini-2.5-flash')
+### 3. Configurar Chave da OpenAI
+
+Crie ou edite o arquivo `.env` adicionando sua chave de API da OpenAI:
+```bash
+OPENAI_API_KEY="SUA_CHAVE_DE_API"
+```o  
+
+
 
 # 3. Gere a resposta
 response = cliente.generate_content(prompt)
 
 # 4. Exiba a saída
 print(response.text)
+
