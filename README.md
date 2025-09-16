@@ -36,9 +36,9 @@ Utilize o comando abaixo para instalar as bibliotecas necessárias:
 pip install -r requirements.txt
 ```
 
-### 3. Configurar Chave da OpenAI
+### 3. Configurar Chave do Gemini
 
-Crie ou edite o arquivo `.env` adicionando sua chave de API da OpenAI:
+Crie ou edite o arquivo `.env` adicionando sua chave de API do Gemini:
 ```bash
 GEMINI_API_KEY="SUA_CHAVE_DE_API"
 ```o  
@@ -50,6 +50,7 @@ response = cliente.generate_content(prompt)
 
 # 4. Exiba a saída
 print(response.text)
+
 
 
 
